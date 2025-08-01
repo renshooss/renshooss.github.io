@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-image: url('fondoo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 204, 230, 0.3);
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.carta-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.texto-arriba {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d63384;
+  font-family: 'Quicksand', sans-serif;
+  animation: latido 2s infinite;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.carta-cerrada-img {
+  width: 320px;
+  height: 320px;
+  background-image: url('images/cartadibujo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 192, 203, 0.5);
+  background-color: transparent;
+}
+
+.carta {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
+  max-width: 600px;
+  animation: aparecer 1.5s ease-out forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.contenido-carta {
+  line-height: 1.8;
+  color: #5a5a5a;
+  font-size: 1.2rem;
+  text-align: left;
+  max-width: 500px;
+}
+
+.contenido-carta h1 {
+  color: #ff4d94;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.corazon-final {
+  display: inline-block;
+  margin-top: 20px;
+  animation: latido 2s infinite;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.corazon-flotante {
+  position: fixed;
+  top: -50px;
+  z-index: 100;
+  animation: flotar linear forwards;
+  user-select: none;
+  opacity: 0.8;
+}
+
+@keyframes flotar {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
